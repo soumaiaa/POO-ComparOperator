@@ -28,9 +28,7 @@ body{
    height: 600px;
 
 }
-.modal-footer{
-  background-color: white;
-}
+
 .modal-body{
        background: linear-gradient( rgba(235, 235, 235, 0)0%, rgb(213, 213, 213)100%);
 }
@@ -203,6 +201,27 @@ body{
   width: 200px;
   height: 200px;
 }
+/* destination */
+#background-destination {
+  background-color: rgb(200, 220, 243);
+}
+
+.imgLogo {
+  width: 100%;
+  height: auto;
+}
+
+.truefalse {
+  width: 60px;
+  height: 60px;
+}
+
+.plus {
+  width: 250px;
+  height: 250px;
+
+}
+
 
 
 

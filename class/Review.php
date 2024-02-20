@@ -5,8 +5,14 @@ class Review{
     private $author;
     private $tourOperatorId;
 
-    public function __construct()
+    public function __construct($data)
     {
+        if(isset($data['id'])) {
+            $this->id=$data['id'];
+            }
+        $this->message=$data['message'];
+        $this->author=$data['author'];
+        $this->tourOperatorId=$data['tour_operator_id'];
 
     }
 
