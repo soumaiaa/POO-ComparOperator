@@ -57,7 +57,7 @@ foreach ($new as $pay) {
                 </div>
             </div>
         </nav>
-
+        
 
         <div class="move mt-5">
             <span class="marker-title">TUNIS</span>
@@ -81,7 +81,8 @@ foreach ($new as $pay) {
         </div>
     </div>
     <!-- modal comment Add this to the end of your HTML body -->
-    <form action="" method="post" enctype="multipart/form-data">
+     
+     <form action="" method="post" enctype="multipart/form-data">
         <div class="modal mt-5 text-center" id="administrateur" tabindex="-1" role="dialog">
             <div class="modal-dialog " role="document">
                 <div class="modal-content mt-5 ">
@@ -92,8 +93,8 @@ foreach ($new as $pay) {
                         </button>
                     </div>
                     <div class="modal-body d-flex flex-column justify-content-center aligne-items-enter">
-                        <!-- <img src="./images/palmier.jpg" class="opacity-75"alt=""> -->
-                        <label for="">Saisir votre nom:</label>
+                        <img class="w-50" src="./images/avatar.gif" class="opacity-75"alt="">
+                        
 
 
                         <label for="">Saisir votre mot de pass:</label>
@@ -118,18 +119,22 @@ foreach ($new as $pay) {
                     <div class="logoAgence">
                         <img class="imgLogo" src="images/<?php echo $newDestination->getLocation() ?>.jpg" class="card-img-top" alt="...">
                     </div>
-                    <div class="card-body text-white mt-5">
-                        <h5 class="card-title"><?php echo $newDestination->getLocation() ?></h5>
+                    <div class="card-body text-white mt-5 d-flex justify-content-between aligne-items-center">
+                        <h3 class="card-title"><?php echo $newDestination->getLocation() ?></h3>
+                        <img class="avion" src="./images/flight-route-traveling-svgrepo-com.svg" alt="">
 
                     </div>
-                    <ul class="list-group list-group-flush ">
-                        <li class="list-group-item bg-dark text-white">price : <?php echo $newDestination->getPrice() ?> € / person</li>
+                    <ul class="list-group list-unstyled">
+                        <div class="d-flex justify-content-between aligne-items-center">
+                     
+                            <li class=" bg-dark text-warning fw-bold"><?php echo $newDestination->getPrice() ?> € </li>
 
+                        </div>
                     </ul>
                     <form action="./comparer.php" method="post">
                         <button type="submit" class="text-center btn btn-success card-link text-decoration-none text-white">Comparer</button>
                         <input type="hidden" name="location" value="<?php echo $newDestination->getLocation() ?>">
-                       
+
                     </form>
                 </div>
             <?php } ?>

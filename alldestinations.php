@@ -1,7 +1,7 @@
 <?php
 require_once('./config/autoload.php');
 require_once('./config/db.php');
-
+$dests = []; // Initialize $dests as an empty array
 if(isset($_POST['id_tour_operator'])){
     $idOperator=$_POST['id_tour_operator'];
 } else if(isset($_SESSION['id_tour_operator'])) {
@@ -37,7 +37,7 @@ foreach ($destinations as $destination ) {
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <a class="navbar-brand text-white logo" href="#"><img class="rounded-pill logo" src="./images/logo.png" alt=""></a>
+                <a class="navbar-brand text-white logo" href="#"><img class="rounded-pill logo" src="./images/logo4.png" alt=""></a>
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
@@ -61,15 +61,19 @@ foreach ($destinations as $destination ) {
                 <div class="logoAgence">
                     <img class="imgLogo" src="images/<?php echo $dest->getLocation() ?>.jpg" class="card-img-top" alt="...">
                 </div>
-                <div class="card-body text-white mt-5">
-                    <h5 class="card-title"><?php echo $dest->getLocation() ?></h5>
+                <div class="card-body text-white mt-5 d-flex justify-content-between aligne-items-center">
+                        <h3 class="card-title"><?php echo $dest->getLocation() ?></h3>
+                        <img class="avion" src="./images/flight-route-traveling-svgrepo-com.svg" alt="">
 
-                </div>
-                <ul class="list-group list-group-flush ">
-                    <li class="list-group-item bg-dark text-white">price : <?php echo $dest->getPrice()?> € / person</li>
+                    </div>
+                <ul class="list-group list-unstyled">
+                        
+                     
+                <li class=" bg-dark text-warning fw-bold"><?php echo $dest->getPrice() ?> € </li>
 
-                </ul>
-                <button type="submit" class=" btn btn-success card-link text-decoration-none text-white">Réserver</button>
+                        
+                    </ul>
+                
             </div>
         <?php } ?>
     </div>

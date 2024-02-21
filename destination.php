@@ -39,13 +39,13 @@ $tour->UpdateOperatorToPremium($tourupdate);
 </head>
 
 <body id="background-destination">
-    <div>
+    <div class="mt-5">
         <nav class="navbar navbar-expand-lg  container bg-black rounded-5 shadow">
             <div class="container-fluid">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <a class="navbar-brand text-white logo" href="#"><img class="rounded-pill logo" src="./images/logo.png" alt=""></a>
+                <a class="navbar-brand text-white logo" href="#"><img class="rounded-pill logo" src="./images/logo4.png" alt=""></a>
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
@@ -68,11 +68,10 @@ $tour->UpdateOperatorToPremium($tourupdate);
         <?php foreach ($opers as $oper) { ?>
             <div class="col-3 card bg-dark m-3" style="width: 18rem;">
                 <div class=" logoAgence">
-                    <img class="imgLogo" src="images/logo4.png" class="card-img-top" alt="...">
+                   <h3 class="text-white text-center mt-3">Tour Operator</h3>
                 </div>
                 <div class="card-body text-white mt-5">
-                    <h5 class="card-title"><?php echo $oper->getName() ?></h5>
-                    <p class="card-text">Des voyages qui décollent vers l'extraordinaire! Réservez dès maintenant et envolez-vous vers l'aventure.(<?= $oper->getName() ?>)</p>
+                    <h5 class="card-title  text-success"><?php echo $oper->getName() ?></h5>
                 </div>
                 <ul class="list-group list-group-flush ">
                     <li class="list-group-item bg-dark text-white">Nombre de vote : <?php echo $oper->getGradeCount() ?> </li>

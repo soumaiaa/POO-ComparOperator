@@ -1,3 +1,6 @@
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+
+
 body{
   overflow-x: hidden;
   margin: 0;
@@ -203,7 +206,8 @@ body{
 }
 /* destination */
 #background-destination {
-  background-color: rgb(200, 220, 243);
+  background:linear-gradient(110deg, rgb(47, 92, 227), rgb(254, 254, 254));
+  
 }
 
 .imgLogo {
@@ -221,7 +225,106 @@ body{
   height: 250px;
 
 }
+/*==========================etoile=========*/
+/****** Style Star Rating Widget *****/
+fieldset, .label { margin: 0; padding: 0; }
 
+.rating { 
+  border: none;
+  float: left;
+}
+
+.rating > .input { display: none; } 
+.rating > .label:before { 
+  margin: 5px;
+  font-size: 1.25em;
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f005";
+}
+
+.rating > .half:before { 
+  content: "\f089";
+  position: absolute;
+}
+
+.rating > .label { 
+  color: #ddd; 
+ float: right; 
+}
+
+/***** CSS Magic to Highlight Stars on Hover *****/
+
+.rating > .input:checked ~ .label, /* show gold star when clicked */
+.rating:not(:checked) > .label:hover, /* hover current star */
+.rating:not(:checked) > .label:hover ~ .label { color: #FFD700;  } /* hover previous stars in list */
+
+.rating > .input:checked + .label:hover, /* hover current star when changing rating */
+.rating > .input:checked ~ .label:hover,
+.rating > .label:hover ~ .input:checked ~ .label, /* lighten current selection */
+.rating > .input:checked ~ .label:hover ~ .label { color: #FFED85;  } 
+
+/* scroll bar of the comment in comparer page for changing the  color*/
+
+/* CSS to style the scrollbar */
+.comments-container::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+}
+
+/* Track (background) of the scrollbar*/
+.comments-container::-webkit-scrollbar-track {
+  background: #06982317; /* Color of the track */
+}
+
+/* Handle (thumb) of the scrollbar */
+.comments-container::-webkit-scrollbar-thumb {
+  background: #274e14; /* Color of the thumb */
+  border-radius: 6px; /* Roundness of the thumb */
+}
+
+/* Handle on hover */
+.comments-container::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Color of the thumb on hover */
+}
+
+/* font of the comment */
+.commentText{
+  font-size: 12px;
+  opacity: 0.6;
+}
+/* svg avion */
+.avion{
+  width: 50px;
+  height: 50px;
+}
+/* modal */
+.modal-content {
+  /* background: linear-gradient(#7ee664c8, #9198e500); */
+  background-image: url(./images/palmier.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: auto;
+
+
+}
+
+.modal-body {
+  background: linear-gradient(#fbfdfa00, #f6f7f6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  gap: 1rem;
+}
+
+.modal-body input {
+  width: 250px;
+
+}
 
 
 
