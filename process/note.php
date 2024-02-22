@@ -3,13 +3,14 @@ require_once '../config/autoload.php';
 require_once '../config/db.php';
 
 $grade = new Manager($db);
-// var_dump($_POST['rating']);
-// var_dump($_POST['name']);
-// var_dump($_POST['link']);
-// var_dump($_POST['grade_total']);
-// var_dump($_POST['grade_count']);
-// var_dump($_POST['isPremium']);
+var_dump($_POST['rating']);
+var_dump($_POST['name']);
+var_dump($_POST['link']);
+var_dump($_POST['grade_total']);
+var_dump($_POST['grade_count']);
+var_dump($_POST['isPremium']);
 var_dump($_POST['location']);
+die();
 if (
     isset($_POST['id']) && 
     isset($_POST['rating']) && !empty($_POST['rating'])&&
@@ -44,5 +45,6 @@ if (
     $grade->UpdateOperatorGrade($newTour);
     $_SESSION['location']=$_POST['location'];
     header('Location: ../comparer.php');
+    exit();
 }
 ?>
