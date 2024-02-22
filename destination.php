@@ -31,9 +31,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['name']) && !empty($_PO
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COMPAROPERATOR</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="icon" type="image/x-icon" href="./images/logo4.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Capriola&family=Poppins:wght@500&display=swap" rel="stylesheet">
 </head>
@@ -49,9 +51,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['name']) && !empty($_PO
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active text-white" aria-current="page" href="./index.php">Home</a>
+                            <a class="nav-link active text-white" aria-current="page" href="./index.php">Accueil</a>
                         </li>
-
+                        <li class="nav-item">
+                            <a class="nav-link active text-dark fw-bolder" aria-current="page" href="">Administrateur</a>
+                        </li>
 
                     </ul>
 
@@ -80,13 +84,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['name']) && !empty($_PO
                                 <path d="M3.488 13.184l6.272 6.112-1.472 8.608 7.712-4.064 7.712 4.064-1.472-8.608 6.272-6.112-8.64-1.248-3.872-7.808-3.872 7.808z"></path>
                             </g>
                         </svg></li>
-                        <div class="d-flex m-2">
+                    <div class="d-flex m-2">
                         <li class="list-group-item bg-dark text-white border-0">Is Premium : </li>
-                            <!-- modifier premium -->
-                            <form action="./process/premium.php" method="post">
-                                <input type="hidden" value="<?php echo $oper->getId() ?>" name="modifierPremiumIdOperator">
-                                <button type="submit" name="sendModifier" class="btn bg-success-subtle p-0 shadow rounded-circle hover"><img class="truefalse" src="./images/<?php echo $oper->getIsPremium() ?>.svg" alt=""></button>
-                            </form>
+                        <!-- modifier premium -->
+                        <form action="./process/premium.php" method="post">
+                            <input type="hidden" value="<?php echo $oper->getId() ?>" name="modifierPremiumIdOperator">
+                            <button type="submit" name="sendModifier" class="btn bg-success-subtle p-0 shadow rounded-circle hover"><img class="truefalse" src="./images/<?php echo $oper->getIsPremium() ?>.svg" alt=""></button>
+                        </form>
 
                     </div>
                 </ul>
@@ -100,7 +104,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['name']) && !empty($_PO
         <?php } ?>
     </div>
     <!-- + -->
-    <div class="card bg-dark mx-auto mb-3" style="width: 18rem;">
+    <div class="card bg-dark mx-auto mb-3 p-3" style="width: 18rem;">
         <div class="d-flex justify-content-center aligne-items-center">
             <a href=""><svg class="plus" viewBox="0 0 117.00 117.00" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000">
                     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -137,6 +141,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['name']) && !empty($_PO
         </form>
 
     </div>
+
     <!-- footer -->
     <footer id="footer" class="footer-1">
         <div class="main-footer widgets-dark typo-light">
@@ -155,10 +160,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['name']) && !empty($_PO
                             <h5 class="widget-title">Liens rapides<span></span></h5>
                             <ul class="thumbnail-widget">
                                 <li>
-                                    <div class="thumb-content"><a href="./index.php">Destinations</a></div>
+                                    <div class="thumb-content"><a class="text-warning" href="./index.php">Destinations</a></div>
                                 </li>
                                 <li>
-                                    <div class="thumb-content"><a href="#.">About</a></div>
+                                    <div class="thumb-content"><a class="text-warning" href="#.">About</a></div>
                                 </li>
                             </ul>
                         </div>
@@ -173,8 +178,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['name']) && !empty($_PO
                         <div class="widget no-box">
                             <h5 class="widget-title">Contactez nous<span></span></h5>
 
-                            <p><a href="mailto:info@domain.com" title="glorythemes">negarshahbazi.official@gmail.com</a></p>
-                            <p><a href="mailto:info@domain.com" title="glorythemes">soumaiaalouii@gmail.com
+                            <p><a class="text-success" href="mailto:info@domain.com" title="glorythemes">negarshahbazi.official@gmail.com</a></p>
+                            <p><a class="text-success" href="mailto:info@domain.com" title="glorythemes">soumaiaalouii@gmail.com
                                 </a></p>
 
                             <ul class="social-footer2">

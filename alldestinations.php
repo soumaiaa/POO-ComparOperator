@@ -23,9 +23,11 @@ foreach ($destinations as $destination) {
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COMPAROPERATOR</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="icon" type="image/x-icon" href="./images/logo4.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Capriola&family=Poppins:wght@500&display=swap" rel="stylesheet">
 </head>
@@ -41,7 +43,10 @@ foreach ($destinations as $destination) {
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active text-white" aria-current="page" href="./index.php">Home</a>
+                            <a class="nav-link active text-white" aria-current="page" href="./index.php">Accueil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active text-dark fw-bolder" aria-current="page" href="">Administrateur</a>
                         </li>
 
 
@@ -51,78 +56,80 @@ foreach ($destinations as $destination) {
             </div>
         </nav>
     </div>
-    <div class="container d-flex justify-content-center aligne-items-center ">
-        <div class="row">
-            <?php foreach ($dests as $dest) { ?>
-                <div class="col-6 m-3 p-2 card bg-dark " style="width: 18rem;">
-                    <div class="logoAgence">
-                        <img class="imgLogo" src="images/<?php echo $dest->getLocation() ?>.jpg" class="card-img-top" alt="...">
-                    </div>
-                    <div class="card-body text-white mt-5 d-flex justify-content-between aligne-items-center">
-                        <h3 class="card-title"><?php echo $dest->getLocation() ?></h3>
-                        <img class="avion" src="./images/flight-route-traveling-svgrepo-com.svg" alt="">
+    
+        <div class="container d-flex justify-content-center aligne-items-center ">
+            <div class="row">
+                <?php foreach ($dests as $dest) { ?>
+                    <div class="col-6 m-3 p-2 card bg-dark " style="width: 18rem;">
+                        <div class="logoAgence">
+                            <img class="imgLogo" src="images/<?php echo $dest->getLocation() ?>.jpg" class="card-img-top" alt="...">
+                        </div>
+                        <div class="card-body text-white mt-5 d-flex justify-content-between aligne-items-center">
+                            <h3 class="card-title"><?php echo $dest->getLocation() ?></h3>
+                            <img class="avion" src="./images/flight-route-traveling-svgrepo-com.svg" alt="">
+
+                        </div>
+                        <ul class="list-group list-unstyled">
+
+
+                            <li class=" bg-dark text-warning fw-bold"><?php echo $dest->getPrice() ?> € </li>
+
+
+                        </ul>
 
                     </div>
-                    <ul class="list-group list-unstyled">
-
-
-                        <li class=" bg-dark text-warning fw-bold"><?php echo $dest->getPrice() ?> € </li>
-
-
-                    </ul>
-
-                </div>
-            <?php } ?>
+                <?php } ?>
+            </div>
         </div>
-    </div>
-    <!-- + -->
-    <div class="card bg-dark mx-auto mb-3" style="width: 18rem;">
-        <div class="d-flex justify-content-center aligne-items-center">
-            <a href=""><svg class="plus" viewBox="0 0 117.00 117.00" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000">
-                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                    <g id="SVGRepo_iconCarrier">
-                        <title></title>
-                        <desc></desc>
-                        <defs></defs>
-                        <g fill="none" fill-rule="evenodd" id="Page-1" stroke="none" stroke-width="1">
-                            <g fill-rule="nonzero" id="add">
-                                <path d="M58.5,0.5 C26.5,0.5 0.4,26.5 0.4,58.5 C0.4,90.5 26.4,116.5 58.5,116.5 C90.5,116.5 116.5,90.5 116.5,58.5 C116.5,26.5 90.5,0.5 58.5,0.5 Z M58.5,108.4 C31,108.4 8.6,86 8.6,58.5 C8.6,31 31,8.6 58.5,8.6 C86,8.6 108.4,31 108.4,58.5 C108.4,86 86,108.4 58.5,108.4 Z" fill="#4A4A4A" id="Shape"></path>
-                                <path d="M85.2,53.9 L62.6,53.9 L62.6,31.2 C62.6,28.9 60.8,27.1 58.5,27.1 C56.2,27.1 54.4,28.9 54.4,31.2 L54.4,53.8 L31.8,53.8 C29.5,53.8 27.7,55.6 27.7,57.9 C27.7,60.2 29.5,62 31.8,62 L54.4,62 L54.4,84.6 C54.4,86.9 56.2,88.7 58.5,88.7 C60.8,88.7 62.6,86.9 62.6,84.6 L62.6,62 L85.2,62 C87.5,62 89.3,60.2 89.3,57.9 C89.3,55.6 87.5,53.9 85.2,53.9 Z" fill="#17AB13" id="Shape"></path>
+        <!-- + -->
+        <div class="card bg-dark mx-auto mb-3 p-3" style="width: 18rem;">
+            <div class="d-flex justify-content-center aligne-items-center">
+                <a href=""><svg class="plus" viewBox="0 0 117.00 117.00" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <title></title>
+                            <desc></desc>
+                            <defs></defs>
+                            <g fill="none" fill-rule="evenodd" id="Page-1" stroke="none" stroke-width="1">
+                                <g fill-rule="nonzero" id="add">
+                                    <path d="M58.5,0.5 C26.5,0.5 0.4,26.5 0.4,58.5 C0.4,90.5 26.4,116.5 58.5,116.5 C90.5,116.5 116.5,90.5 116.5,58.5 C116.5,26.5 90.5,0.5 58.5,0.5 Z M58.5,108.4 C31,108.4 8.6,86 8.6,58.5 C8.6,31 31,8.6 58.5,8.6 C86,8.6 108.4,31 108.4,58.5 C108.4,86 86,108.4 58.5,108.4 Z" fill="#4A4A4A" id="Shape"></path>
+                                    <path d="M85.2,53.9 L62.6,53.9 L62.6,31.2 C62.6,28.9 60.8,27.1 58.5,27.1 C56.2,27.1 54.4,28.9 54.4,31.2 L54.4,53.8 L31.8,53.8 C29.5,53.8 27.7,55.6 27.7,57.9 C27.7,60.2 29.5,62 31.8,62 L54.4,62 L54.4,84.6 C54.4,86.9 56.2,88.7 58.5,88.7 C60.8,88.7 62.6,86.9 62.6,84.6 L62.6,62 L85.2,62 C87.5,62 89.3,60.2 89.3,57.9 C89.3,55.6 87.5,53.9 85.2,53.9 Z" fill="#17AB13" id="Shape"></path>
+                                </g>
                             </g>
                         </g>
-                    </g>
-                </svg></a>
+                    </svg></a>
+            </div>
+            <div class="card-body text-white mt-5">
+                <h5 class="card-title">Ajouter votre destination</h5>
+            </div>
+            <form action="./process/create_destination.php" method="post">
+                <label class="text-white-50" for="">saisir le nom de votre déstination:</label>
+                <select class="w-100 bg-transparent text-white border shadow " name="location" id="">
+                    <option class=" bg-transparent text-dark border shadow " value="Amazon">Amazon</option>
+                    <option class=" bg-transparent text-dark border shadow " value="Dubai">Dubai</option>
+                    <option class=" bg-transparent text-dark border shadow " value="Greece">Greece</option>
+
+                    <option class=" bg-transparent text-dark border shadow " value="Hawaii">Hawaii</option>
+
+                    <option class=" bg-transparent text-dark border shadow " value="Iran">Iran</option>
+
+                    <option class=" bg-transparent text-dark border shadow " value="Spain">Spain</option>
+
+                    <option class=" bg-transparent text-dark border shadow " value="Maldive">Maldive</option>
+                    <option class=" bg-transparent text-dark border shadow " value="Monaco">Monaco</option>
+                    <option class=" bg-transparent text-dark border shadow " value="Rome">Rome</option>
+                    <option class=" bg-transparent text-dark border shadow " value="Tunis">Tunis</option>
+                </select>
+                <label class="text-white-50" for="">saisir le prix:</label>
+                <input class="w-100 bg-transparent text-white  border shadow " type="text" name="price" value="">
+
+                <input type="hidden" value="<?php echo $idOperator ?>" name="id_tour_operator">
+                <button type="submit" name="submitnew" class="btn btn-success m-2">save</button>
+            </form>
+
         </div>
-        <div class="card-body text-white mt-5">
-            <h5 class="card-title">Ajouter votre destination</h5>
-        </div>
-        <form action="./process/create_destination.php" method="post">
-            <label class="text-white-50" for="">saisir le nom de votre déstination:</label>
-            <select class="w-100 bg-transparent text-white border shadow " name="location" id="">
-                <option class=" bg-transparent text-dark border shadow " value="Amazon">Amazon</option>
-                <option class=" bg-transparent text-dark border shadow " value="Dubai">Dubai</option>
-                <option class=" bg-transparent text-dark border shadow " value="Greece">Greece</option>
-
-                <option class=" bg-transparent text-dark border shadow " value="Hawaii">Hawaii</option>
-
-                <option class=" bg-transparent text-dark border shadow " value="Iran">Iran</option>
-
-                <option class=" bg-transparent text-dark border shadow " value="Spain">Spain</option>
-
-                <option class=" bg-transparent text-dark border shadow " value="Maldive">Maldive</option>
-                <option class=" bg-transparent text-dark border shadow " value="Monaco">Monaco</option>
-                <option class=" bg-transparent text-dark border shadow " value="Rome">Rome</option>
-                <option class=" bg-transparent text-dark border shadow " value="Tunis">Tunis</option>
-            </select>
-            <label class="text-white-50" for="">saisir le prix:</label>
-            <input class="w-100 bg-transparent text-white  border shadow " type="text" name="price" value="">
-
-            <input type="hidden" value="<?php echo $idOperator ?>" name="id_tour_operator">
-            <button type="submit" name="submitnew" class="btn btn-success m-2">save</button>
-        </form>
-
-    </div>
+  
     <!-- footer -->
     <footer id="footer" class="footer-1">
         <div class="main-footer widgets-dark typo-light">
@@ -141,10 +148,10 @@ foreach ($destinations as $destination) {
                             <h5 class="widget-title">Liens rapides<span></span></h5>
                             <ul class="thumbnail-widget">
                                 <li>
-                                    <div class="thumb-content"><a href="./index.php">Destinations</a></div>
+                                    <div class="thumb-content "><a class="text-warning" href="./index.php">Destinations</a></div>
                                 </li>
                                 <li>
-                                    <div class="thumb-content"><a href="#.">About</a></div>
+                                    <div class="thumb-content"><a class="text-warning" href="#.">About</a></div>
                                 </li>
                             </ul>
                         </div>
@@ -159,8 +166,8 @@ foreach ($destinations as $destination) {
                         <div class="widget no-box">
                             <h5 class="widget-title">Contactez nous<span></span></h5>
 
-                            <p><a href="mailto:info@domain.com" title="glorythemes">negarshahbazi.official@gmail.com</a></p>
-                            <p><a href="mailto:info@domain.com" title="glorythemes">soumaiaalouii@gmail.com
+                            <p><a class="text-success" href="mailto:info@domain.com" title="glorythemes">negarshahbazi.official@gmail.com</a></p>
+                            <p><a class="text-success" href="mailto:info@domain.com" title="glorythemes">soumaiaalouii@gmail.com
                                 </a></p>
 
                             <ul class="social-footer2">

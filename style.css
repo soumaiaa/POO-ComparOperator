@@ -1,12 +1,26 @@
 @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+}
 
 body{
   overflow-x: hidden;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
   
+}
+.background {
+
+background:linear-gradient( rgb(254, 254, 254), rgb(47, 92, 227));
+}
+#background-destination{
+  background:linear-gradient( rgb(254, 254, 254), rgb(47, 92, 227)); 
 }
 /*=====//navbar//=========*/
 .logo{
@@ -56,11 +70,13 @@ body{
     padding-top:100px;
     padding-bottom:10px;
     width: 100%;
-    height: 800px;
+    height: 700px;
+
     animation: large-bg-image-animasi 200s linear infinite;
     -ms-animation: large-bg-image-animasi 200s linear infinite;
     -moz-animation: large-bg-image-animasi 200s linear infinite;
     -webkit-animation: large-bg-image-animasi 200s linear infinite;
+    overflow-x: hidden;
     }
 
 @keyframes large-bg-image-animasi {

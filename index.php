@@ -25,8 +25,10 @@ foreach ($new as $pay) {
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COMPAROPERATOR</title>
+    <link rel="icon" type="image/x-icon" href="./images/logo4.png">
     <link rel="stylesheet" href="./style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Capriola&family=Poppins:wght@500&display=swap" rel="stylesheet">
@@ -43,52 +45,39 @@ foreach ($new as $pay) {
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
+                            <a class="nav-link active text-dark fw-bolder " aria-current="page" href="#">Accueil</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active text-white" aria-current="page" href="#"><button class="bg-transparent border border-0 text-white" data-toggle="modal" id="myAdministrateur" data-toggle="modal" data-target="#administateur">Administrateur</button></a>
                         </li>
 
                     </ul>
-                    <form action="./comparer.php" method="post" class="d-flex" role="search">
-                        <select class="" name="location" id="">
-                            <option class=" " value="amazon">Amazon</option>
-                            <option class="" value="dubai">Dubai</option>
-                            <option class="" value="greece">Greece</option>
-                            <option class="" value="hawaii">Hawaii</option>
-                            <option class="" value="iran">Iran</option>
-                            <option class="" value="maldive">Maldive</option>
-                            <option class="" value="monaco">Monaco</option>
-                            <option class="" value="rome">Rome</option>
-                            <option class="" value="tunis">Tunis</option>
-                        </select>
 
-                        <button class="btn btn-light" type="submit">Search</button>
-                    </form>
                 </div>
             </div>
         </nav>
 
-
-        <div class="move mt-5">
-            <span class="marker-title">TUNIS</span>
-            <span class="marker-caption"><img class="imageville" src="./images/Tunis.jpg" alt=""></span>
-            <span class="marker-title">2390€</span>
-        </div>
-        <div class="move2 mt-5 m">
-            <span class="marker-title">MONACO</span>
-            <span class="marker-caption"><img class="imageville" src="./images/monaco.jpg" alt=""></span>
-            <span class="marker-title">1390€</span>
-        </div>
-        <div class="move3 mt-5" :>
-            <span class="marker-title">LONDRES</span>
-            <span class="marker-caption"><img class="imageville" src="./images/londre.jpg" alt=""></span>
-            <span class="marker-title">1100€</span>
-        </div>
-        <div class="move4 mt-5">
-            <span class="marker-title">ROME</span>
-            <span class="marker-caption"><img class="imageville" src="./images/rome.jpg" alt=""></span>
-            <span class="marker-title">1650€</span>
+        <div>
+            <div class="move mt-5">
+                <span class="marker-title">TUNIS</span>
+                <span class="marker-caption"><img class="imageville" src="./images/Tunis.jpg" alt=""></span>
+                <span class="marker-title">2390€</span>
+            </div>
+            <div class="move2 mt-5 m">
+                <span class="marker-title">MONACO</span>
+                <span class="marker-caption"><img class="imageville" src="./images/monaco.jpg" alt=""></span>
+                <span class="marker-title">1390€</span>
+            </div>
+            <div class="move3 mt-5" :>
+                <span class="marker-title">LONDRES</span>
+                <span class="marker-caption"><img class="imageville" src="./images/londre.jpg" alt=""></span>
+                <span class="marker-title">1100€</span>
+            </div>
+            <div class="move4 mt-5">
+                <span class="marker-title">ROME</span>
+                <span class="marker-caption"><img class="imageville" src="./images/rome.jpg" alt=""></span>
+                <span class="marker-title">1650€</span>
+            </div>
         </div>
     </div>
     <!-- modal comment Add this to the end of your HTML body -->
@@ -122,33 +111,35 @@ foreach ($new as $pay) {
 
 
     </form>
-    <!-- destinations -->
-    <div class="container d-flex justify-content-center aligne-items-center ">
-        <div class="row">
-            <?php foreach ($tab as $newDestination) { ?>
-                <div class="col-6 m-3 p-2 card bg-dark " style="width: 18rem;">
-                    <div class="logoAgence">
-                        <img class="imgLogo" src="images/<?php echo $newDestination->getLocation() ?>.jpg" class="card-img-top" alt="...">
-                    </div>
-                    <div class="card-body text-white mt-5 d-flex justify-content-between aligne-items-center">
-                        <h3 class="card-title"><?php echo $newDestination->getLocation() ?></h3>
-                        <img class="avion" src="./images/flight-route-traveling-svgrepo-com.svg" alt="">
-
-                    </div>
-                    <ul class="list-group list-unstyled">
-                        <div class="d-flex justify-content-between aligne-items-center">
-
-                            <li class=" bg-dark text-warning fw-bold"><?php echo $newDestination->getPrice() ?> € </li>
+    <div class="background ">
+        <!-- destinations -->
+        <div class="container-md  ">
+            <div class="row">
+                <?php foreach ($tab as $newDestination) { ?>
+                    <div class="col-md-6 mx-auto m-3 p-2 card bg-dark " style="width: 18rem;">
+                        <div class="logoAgence">
+                            <img class="imgLogo" src="images/<?php echo $newDestination->getLocation() ?>.jpg" class="card-img-top" alt="...">
+                        </div>
+                        <div class="card-body text-white mt-5 d-flex justify-content-between aligne-items-center">
+                            <h3 class="card-title"><?php echo $newDestination->getLocation() ?></h3>
+                            <img class="avion" src="./images/flight-route-traveling-svgrepo-com.svg" alt="">
 
                         </div>
-                    </ul>
-                    <form action="./comparer.php" method="post">
-                        <button type="submit" class="text-center btn btn-success card-link text-decoration-none text-white">Comparer</button>
-                        <input type="hidden" name="location" value="<?php echo $newDestination->getLocation() ?>">
+                        <ul class="list-group list-unstyled">
+                            <div class="d-flex justify-content-between aligne-items-center">
 
-                    </form>
-                </div>
-            <?php } ?>
+                                <li class=" bg-dark text-warning fw-bold"><?php echo $newDestination->getPrice() ?> € </li>
+
+                            </div>
+                        </ul>
+                        <form action="./comparer.php" method="post">
+                            <button type="submit" class="text-center btn btn-success card-link text-decoration-none text-white">Comparer</button>
+                            <input type="hidden" name="location" value="<?php echo $newDestination->getLocation() ?>">
+
+                        </form>
+                    </div>
+                <?php } ?>
+            </div>
         </div>
     </div>
     <!-- footer -->
@@ -169,10 +160,10 @@ foreach ($new as $pay) {
                             <h5 class="widget-title">Liens rapides<span></span></h5>
                             <ul class="thumbnail-widget">
                                 <li>
-                                    <div class="thumb-content"><a href="./index.php">Destinations</a></div>
+                                    <div class="thumb-content"><a class="text-warning" href="./index.php">Destinations</a></div>
                                 </li>
                                 <li>
-                                    <div class="thumb-content"><a href="#.">About</a></div>
+                                    <div class="thumb-content"><a class="text-warning" href="#.">About</a></div>
                                 </li>
                             </ul>
                         </div>
@@ -187,8 +178,8 @@ foreach ($new as $pay) {
                         <div class="widget no-box">
                             <h5 class="widget-title">Contactez nous<span></span></h5>
 
-                            <p><a href="mailto:info@domain.com" title="glorythemes">negarshahbazi.official@gmail.com</a></p>
-                            <p><a href="mailto:info@domain.com" title="glorythemes">soumaiaalouii@gmail.com
+                            <p><a class="text-success" href="mailto:info@domain.com" title="glorythemes">negarshahbazi.official@gmail.com</a></p>
+                            <p><a class="text-success" href="mailto:info@domain.com" title="glorythemes">soumaiaalouii@gmail.com
                                 </a></p>
 
                             <ul class="social-footer2">

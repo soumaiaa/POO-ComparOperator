@@ -44,15 +44,18 @@ if (!isset($_POST['location']) && isset($_SESSION['location'])) {
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COMPAROPERATOR</title>
+    <link rel="icon" type="image/x-icon" href="./images/logo4.png">
     <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.cdnfonts.com/css/sansita-one-3" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Capriola&family=Poppins:wght@500&display=swap" rel="stylesheet">
 </head>
 
 <body id="background-destination">
-    <div>
+    <div class="mt-5">
         <nav class="navbar navbar-expand-lg  container bg-black rounded-5 shadow">
             <div class="container-fluid">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
@@ -62,7 +65,7 @@ if (!isset($_POST['location']) && isset($_SESSION['location'])) {
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active text-white" aria-current="page" href="./index.php">Home</a>
+                            <a class="nav-link active text-white" aria-current="page" href="./index.php">Accueil</a>
                         </li>
 
 
@@ -85,21 +88,27 @@ if (!isset($_POST['location']) && isset($_SESSION['location'])) {
                 <div class="row">
                     <div class="col-md-5 ">
                         <div class=" logoAgence p-0 ">
-                            <img class="imgLogo " src="images/<?php echo $loc['location'] ?>.jpg" class="card-img-top" alt="...">
+                            <img class="imgLogo  rounded-5 " src="images/<?php echo $loc['location'] ?>.jpg" class="card-img-top" alt="...">
+
                         </div>
 
                         <div class=" card-body text-white p-3 ">
-                            <h2 class="card-title text-success "><?php echo  $loc['name'] ?> </h2>
+
                             <div class="d-flex justify-content-between aligne-items-center mb-2">
                                 <h5 class="card-title"><?php echo $loc['location'] ?></h5>
-                                <a href="<?php echo $loc['link'] ?>" target="_blank"><button type="submit" class=" btn btn-success card-link text-decoration-none text-white rounded-pill">Voir + </button></a>
+                                <?php  if ($loc['is_premium'] === 1) {?>
+                                <a href="<?php echo $loc['link'] ?>" target="_blank">
+                                    <button type="submit" class="btn btn-success card-link text-decoration-none text-white rounded-pill">Voir +</button>
+                                </a>
+                                <?php }?>
                             </div>
-                            <div class="row d-flex justify-content-center aligne-items-center">
-                                <p class="card-text">Des voyages qui décollent vers l'extraordinaire! Réservez dès maintenant et envolez-vous vers l'aventure.</p>
+                            <div class="row ">
+                                <p class="card-text">Des voyages qui décollent vers l'extraordinaire! Réservez dès maintenant et envolez-vous vers l'aventure avec: <spam class="text-success "> ( <?php echo  $loc['name'] ?> )</spam>
+                                </p>
 
 
-                                <div class="col-8 d-flex flex-column justify-content-center aligns-items-center text-center">
-                                    <ul class="list-group list-group-flush ">
+                                <div class="col-md-8  mx-auto text-center">
+                                    <ul class="list-group list-group-flush  ">
                                         <li class="list-group-item bg-dark text-white"><span class="text-warning fw-bolder"><?php echo $loc['price'] ?> € <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--noto w-25" preserveAspectRatio="xMidYMid meet" fill="#000000">
                                                     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                                                     <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -118,9 +127,9 @@ if (!isset($_POST['location']) && isset($_SESSION['location'])) {
                                                 </svg> </li>
 
 
-                                        <li class="list-group-item bg-dark text-white"><img class="w-25 h-75" src="./images/satisfaction-.png" alt=""><span class="text-warning"> <?php echo  $loc['grade_total'] ?> </span>/10</li>
+                                        <li class="list-group-item bg-dark text-white">Grade:<span class="text-warning"> <?php echo  $loc['grade_total'] ?> </span>/10 <img class="w-25 h-75" src="./images/satisfaction-.png" alt=""></li>
 
-                                        <li class="list-group-item bg-dark text-white ">Is Premium : <img class="truefalse" src="./images/<?php echo $loc['is_premium'] ?>.svg" alt=""></li>
+                                        <li class="list-group-item bg-dark text-white ">Is Premium: <img class="truefalse" src="./images/<?php echo $loc['is_premium'] ?>.svg" alt=""></li>
 
 
                                     </ul>
@@ -130,8 +139,13 @@ if (!isset($_POST['location']) && isset($_SESSION['location'])) {
 
                     </div>
 
-                    <div class="card-body col-md-5 m-5 d-flex flex-column justify-content-between aligne-items-center">
+                    <div class="card-body col-md-5  ">
+                        <div class="text-center">
+                            <h2 class="card-title text-success "><?php echo  $loc['name'] ?> </h2>
+                        </div>
+                        <h6 class="text-white">Tous les commentaires:</h6>
                         <!-- scroll bar in the comment -->
+
                         <div class="comments-container bg-success p-2 text-dark bg-opacity-10 mb-5" style="max-height: 200px; overflow-y: auto;">
                             <ul class="list-unstyled">
                                 <?php foreach ($reviews[$loc['tour_operator_id']] as $rev) { ?>
@@ -147,9 +161,17 @@ if (!isset($_POST['location']) && isset($_SESSION['location'])) {
 
                             <form class="ratings box mt-5" action="./process/check.php" method="post">
                                 <img class="w-25 h-50" src="./images/examen.png" alt="">
-                                <h6 class="text-white">Donnez une note: </h6>
-                                <!-- /============etoile=====/ -->
 
+                                <!-- /=======commentaire========/ -->
+                                <h6 class="text-white">commenter:</h6>
+                                <label class="text-white-50" for="author">Saisir votre nom:</label>
+                                <input class="w-100 bg-transparent text-white border shadow " type="text" name="author" id="author" required>
+
+                                <label class="text-white-50" for="message">Saisir votre commentaire:</label>
+                                <textarea class="w-100 bg-transparent text-white border shadow" name="message" id="message" required></textarea>
+                                <h6 class="text-white mt-3">Donnez une note: </h6>
+                                <!-- /============etoile=====/ -->
+                              
                                 <fieldset class="rating mb-5">
                                     <input class="input" type="radio" id="star5-<?= $i ?>" name="rating" value="5" />
                                     <label class="label full" for="star5-<?= $i ?>" title="Awesome - 5 stars"></label>
@@ -165,25 +187,18 @@ if (!isset($_POST['location']) && isset($_SESSION['location'])) {
 
                                     <input class="input" type="radio" id="star1-<?= $i ?>" name="rating" value="1" />
                                     <label class="label full" for="star1-<?= $i ?>" title="Sucks big time - 1 star"></label>
-                                    <fieldset>
+                                </fieldset><br><br>
 
-                                        <!-- /===========/ -->
-                                        <!-- /=======commentaire========/ --> 
-                                        <h6 class="text-white">commenter:</h6>
-                                        <label class="text-white-50" for="author">Saisir votre nom:</label>
-                                        <input class="w-100 bg-transparent text-white border shadow " type="text" name="author" id="author" required>
+                                <!-- /===========/ -->
+                                <button type="submit" name="but" class="btn btn-success m-2">Envoyer</button>
+                                <input type="hidden" name="grade_count" value="<?php echo $loc['grade_count']; ?>">
+                                <input type="hidden" name="grade_total" value="<?php echo $loc['grade_total']; ?>">
+                                <input type="hidden" name="isPremium" value="<?php echo $loc['is_premium']; ?>">
+                                <input type="hidden" name="link" value="<?php echo $loc['link']; ?>">
+                                <input type="hidden" name="name" value="<?php echo $loc['name']; ?>">
+                                <input type="hidden" name="id" value="<?php echo $loc['tour_operator_id']; ?>">
+                                <input type="hidden" name="location" value="<?php echo isset($_POST['location']) ? htmlspecialchars($_POST['location']) : htmlspecialchars($_SESSION['location']); ?>">
 
-                                        <label class="text-white-50" for="message">Saisir votre commentaire:</label>
-                                        <textarea class="w-100 bg-transparent text-white border shadow" name="message" id="message" required></textarea>
-
-                                        <button type="submit" name="but" class="btn btn-success m-2">Envoyer</button>
-                                        <input type="hidden" name="grade_count" value="<?php echo $loc['grade_count']; ?>">
-                                        <input type="hidden" name="grade_total" value="<?php echo $loc['grade_total']; ?>">
-                                        <input type="hidden" name="isPremium" value="<?php echo $loc['is_premium']; ?>">
-                                        <input type="hidden" name="link" value="<?php echo $loc['link']; ?>">
-                                        <input type="hidden" name="name" value="<?php echo $loc['name']; ?>">
-                                        <input type="hidden" name="id" value="<?php echo $loc['tour_operator_id']; ?>">
-                                        <input type="hidden" name="location" value="<?php echo isset($_POST['location']) ? htmlspecialchars($_POST['location']) : htmlspecialchars($_SESSION['location']); ?>">
                             </form>
                         </div>
                     </div>
@@ -211,10 +226,10 @@ if (!isset($_POST['location']) && isset($_SESSION['location'])) {
                             <h5 class="widget-title">Liens rapides<span></span></h5>
                             <ul class="thumbnail-widget">
                                 <li>
-                                    <div class="thumb-content"><a href="./index.php">Destinations</a></div>
+                                    <div class="thumb-content"><a class="text-warning" href="./index.php">Destinations</a></div>
                                 </li>
                                 <li>
-                                    <div class="thumb-content"><a href="#.">About</a></div>
+                                    <div class="thumb-content"><a class="text-warning" href="#.">About</a></div>
                                 </li>
                             </ul>
                         </div>
@@ -229,8 +244,8 @@ if (!isset($_POST['location']) && isset($_SESSION['location'])) {
                         <div class="widget no-box">
                             <h5 class="widget-title">Contactez nous<span></span></h5>
 
-                            <p><a href="mailto:info@domain.com" title="glorythemes">negarshahbazi.official@gmail.com</a></p>
-                            <p><a href="mailto:info@domain.com" title="glorythemes">soumaiaalouii@gmail.com
+                            <p><a class="text-success" href="mailto:info@domain.com" title="glorythemes">negarshahbazi.official@gmail.com</a></p>
+                            <p><a class="text-success" href="mailto:info@domain.com" title="glorythemes">soumaiaalouii@gmail.com
                                 </a></p>
 
                             <ul class="social-footer2">
