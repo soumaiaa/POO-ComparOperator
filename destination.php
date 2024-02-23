@@ -47,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['name']) && !empty($_PO
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <a class="navbar-brand text-white logo" href="#"><img class="rounded-pill logo" src="./images/logo4.png" alt=""></a>
+                <a class="navbar-brand text-white logo" href="./index.php"><img class="rounded-pill logo" src="./images/logo4.png" alt=""></a>
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
@@ -65,9 +65,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['name']) && !empty($_PO
 
 
     </div>
-    <div class="row d-flex justify-content-around aligne-items-center p-5">
+    <div class="row p-5">
         <?php foreach ($opers as $oper) { ?>
-            <div class="col-3 card bg-dark m-3" style="width: 18rem;">
+            <div class="col-md-3 mx-auto card bg-dark m-3" style="width: 18rem;">
                 <div class=" logoAgence">
                     <h3 class="text-white text-center mt-3">Tour Operator</h3>
                 </div>
@@ -85,7 +85,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['name']) && !empty($_PO
                             </g>
                         </svg></li>
                     <div class="d-flex m-2">
-                        <li class="list-group-item bg-dark text-white border-0">Is Premium : </li>
+                        <li class="list-group-item bg-dark text-white border-0">Premium : </li>
                         <!-- modifier premium -->
                         <form action="./process/premium.php" method="post">
                             <input type="hidden" value="<?php echo $oper->getId() ?>" name="modifierPremiumIdOperator">
@@ -97,7 +97,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['name']) && !empty($_PO
                 <div class="card-body ">
                     <form action="./alldestinations.php" method="post">
                         <input type="hidden" name="id_tour_operator" value="<?php echo $oper->getId() ?>">
-                        <button type="submit" class=" btn btn-success card-link text-decoration-none text-white">Voir tout destinations</button>
+                        <button type="submit" class=" btn btn-success card-link text-decoration-none text-white">Voir les destinations</button>
                     </form>
                 </div>
             </div>
@@ -123,7 +123,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['name']) && !empty($_PO
                 </svg></a>
         </div>
         <div class="card-body text-white mt-5">
-            <h5 class="card-title">Ajouter votre operateur</h5>
+            <h5 class="card-title">Ajouter un operateur</h5>
         </div>
         <form action="" method="post">
             <label class="text-white-50" for="">saisir le nom de votre opérateure:</label>
@@ -137,7 +137,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['name']) && !empty($_PO
                 <option class=" bg-transparent text-dark border shadow " value="0">non</option>
                 <option class=" bg-transparent text-dark border shadow " value="1">oui</option>
             </select>
-            <button type="submit" name="submitnew" class="btn btn-success m-2">save</button>
+            <button type="submit" name="submitnew" class="btn btn-success m-2">Enregistrer</button>           
         </form>
 
     </div>

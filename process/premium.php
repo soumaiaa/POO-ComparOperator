@@ -6,7 +6,7 @@ $tour = new Manager($db);
 // modifier premium
 if(isset($_POST['modifierPremiumIdOperator']) && isset($_POST['sendModifier'])){
     $myOperator=$tour->getOperatorByid($_POST['modifierPremiumIdOperator']);
-
+    
     if($myOperator['is_premium']===0){
         $dataTour = ([
             'id'=>$_POST['modifierPremiumIdOperator'],

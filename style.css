@@ -118,7 +118,7 @@ background:linear-gradient( rgb(254, 254, 254), rgb(47, 92, 227));
   };
 }
 
-.marker-title{
+/* .marker-title{
     font-size: 28px;
     color: black;
     font-weight: bold;
@@ -139,6 +139,7 @@ background:linear-gradient( rgb(254, 254, 254), rgb(47, 92, 227));
     width: 280px;
     top: 200px;
     position: absolute;
+   
     }
     .move:hover,
     .move2:hover,
@@ -154,58 +155,66 @@ background:linear-gradient( rgb(254, 254, 254), rgb(47, 92, 227));
     right: 10%;
     transform-origin: bottom left;
     opacity: 0.5;
+  
     }
 
 /* Marker 2 */
- .move {
+ /* .move {
     -webkit-animation: move-move 1s 0s ease-out forwards;
     animation: move-move 1s 0s ease-out forwards;
     -webkit-animation-duration: 55s;
     animation-duration: 55s;
+  
 }
 /* This is the controls for moves sledge*/
- .move2 {
+ /* .move2 {
    cursor: pointer;
     text-align: left;
     right: -400px;
     transform-origin: bottom left;
-}
+  
+} */
 /* This is the controls for moves sledge*/
- .move2 {
+ /* .move2 {
     -webkit-animation: move-move 1s 0s ease-out forwards;
     animation: move-move 1s 0s ease-out forwards;
     -webkit-animation-duration: 80s;
     animation-duration: 80s;
- }
+  
+ } */
  /*=====3*/
- .move3 {
+ /* .move3 {
   cursor: pointer;
    text-align: left;
    right: -1000px;
    transform-origin: bottom left;
-}
+ 
+} */
 /* This is the controls for moves sledge*/
-.move3 {
+/* .move3 {
    -webkit-animation: move-move 1s 0s ease-out forwards;
    animation: move-move 1s 0s ease-out forwards;
    -webkit-animation-duration: 105s;
    animation-duration: 105s;
-}
+  
+} */
 /*=====*/
-.move4 {
+/* .move4 {
   cursor: pointer;
    text-align: left;
    right: -1600px;
    transform-origin: bottom left;
-}
+  
+} */
 /* This is the controls for moves sledge*/
-.move4 {
+/* .move4 {
    -webkit-animation: move-move 1s 0s ease-out forwards;
    animation: move-move 1s 0s ease-out forwards;
    -webkit-animation-duration: 130s;
    animation-duration: 130s;
-}
-
+  
+} */
+/* 
 @-webkit-keyframes move-move {
     100% {
         right: 100%;
@@ -219,7 +228,7 @@ background:linear-gradient( rgb(254, 254, 254), rgb(47, 92, 227));
 .imageville{
   width: 200px;
   height: 200px;
-}
+}  */
 /* destination */
 #background-destination {
   background:linear-gradient(110deg, rgb(47, 92, 227), rgb(254, 254, 254));

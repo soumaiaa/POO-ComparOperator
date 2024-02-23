@@ -39,7 +39,7 @@ foreach ($destinations as $destination) {
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <a class="navbar-brand text-white logo" href="#"><img class="rounded-pill logo" src="./images/logo4.png" alt=""></a>
+                <a class="navbar-brand text-white logo" href="./index.php"><img class="rounded-pill logo" src="./images/logo4.png" alt=""></a>
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
@@ -57,10 +57,10 @@ foreach ($destinations as $destination) {
         </nav>
     </div>
     
-        <div class="container d-flex justify-content-center aligne-items-center ">
+        <div class="container-md ">
             <div class="row">
                 <?php foreach ($dests as $dest) { ?>
-                    <div class="col-6 m-3 p-2 card bg-dark " style="width: 18rem;">
+                    <div class="col-md-6 mx-auto m-3 p-2 card bg-dark " style="width: 18rem;">
                         <div class="logoAgence">
                             <img class="imgLogo" src="images/<?php echo $dest->getLocation() ?>.jpg" class="card-img-top" alt="...">
                         </div>
@@ -125,7 +125,7 @@ foreach ($destinations as $destination) {
                 <input class="w-100 bg-transparent text-white  border shadow " type="text" name="price" value="">
 
                 <input type="hidden" value="<?php echo $idOperator ?>" name="id_tour_operator">
-                <button type="submit" name="submitnew" class="btn btn-success m-2">save</button>
+                <button type="submit" name="submitnew" class="btn btn-success m-2">Enregistrer</button>
             </form>
 
         </div>

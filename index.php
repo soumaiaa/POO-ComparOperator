@@ -2,8 +2,12 @@
 require_once('./config/autoload.php');
 require_once('./config/db.php');
 
-if (isset($_POST['mot-de-pass']) && !empty($_POST['mot-de-pass']) && isset($_POST['send'])) {
-    if ($_POST['mot-de-pass'] === "sn2024") {
+if (isset($_POST['mot-de-pass']) && 
+     !empty($_POST['mot-de-pass']) && 
+     isset($_POST['send'])) 
+{
+    if ($_POST['mot-de-pass'] === "sn2024") 
+    {
         header('Location: ./destination.php');
         exit();
     } else {
@@ -12,9 +16,11 @@ if (isset($_POST['mot-de-pass']) && !empty($_POST['mot-de-pass']) && isset($_POS
 }
 $newManager = new Manager($db);
 $new = $newManager->getAllDestination();
-// limit 4
+
 // var_dump($new);
-foreach ($new as $pay) {
+
+foreach ($new as $pay) 
+{
     $tab[] = new Destination($pay);
     //  var_dump($tab);
 }
@@ -56,29 +62,10 @@ foreach ($new as $pay) {
                 </div>
             </div>
         </nav>
-
-        <div>
-            <div class="move mt-5">
-                <span class="marker-title">TUNIS</span>
-                <span class="marker-caption"><img class="imageville" src="./images/Tunis.jpg" alt=""></span>
-                <span class="marker-title">2390€</span>
-            </div>
-            <div class="move2 mt-5 m">
-                <span class="marker-title">MONACO</span>
-                <span class="marker-caption"><img class="imageville" src="./images/monaco.jpg" alt=""></span>
-                <span class="marker-title">1390€</span>
-            </div>
-            <div class="move3 mt-5" :>
-                <span class="marker-title">LONDRES</span>
-                <span class="marker-caption"><img class="imageville" src="./images/londre.jpg" alt=""></span>
-                <span class="marker-title">1100€</span>
-            </div>
-            <div class="move4 mt-5">
-                <span class="marker-title">ROME</span>
-                <span class="marker-caption"><img class="imageville" src="./images/rome.jpg" alt=""></span>
-                <span class="marker-title">1650€</span>
-            </div>
-        </div>
+         <div class="mt-5">
+         <img class="w-50 h-50" src="./images/logo-transparent-png.png" alt="">
+         </div>
+        
     </div>
     <!-- modal comment Add this to the end of your HTML body -->
 
@@ -94,12 +81,8 @@ foreach ($new as $pay) {
                     </div>
                     <div class="modal-body d-flex flex-column justify-content-center aligne-items-enter">
                         <img class="w-50" src="./images/avatar.gif" class="opacity-75" alt="">
-
-
-
                         <label for="">Saisir votre mot de pass:</label>
-                        <input type="text" class=" rounded-pill bg-transparent mb-5" name="mot-de-pass" value="">
-
+                        <input type="password" class=" rounded-pill bg-transparent mb-5" name="mot-de-pass" value="">
                         <div class="modal-footer">
                             <button type="submit" name="send" class="btn btn-primary">Enter</button>
                         </div>
@@ -112,7 +95,7 @@ foreach ($new as $pay) {
 
     </form>
     <div class="background ">
-        <!-- destinations -->
+        <!--//////////// destinations/////////////// -->
         <div class="container-md  ">
             <div class="row">
                 <?php foreach ($tab as $newDestination) { ?>
